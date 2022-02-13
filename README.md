@@ -110,10 +110,31 @@ C:\Users\pashicop>ipconfig /all
 lldp - link layer desription protocol 
 `vagrant@vagrant:~$ sudo apt install lldpd`
 # 3
+`/etc/network/interfaces`
 ```
 auto eth0.22
 iface eth0.22 inet static
         address 10.1.4.8
         netmask 255.0.0.0
         vlan_raw_device eth0
+```
+```
+vagrant@vagrant:/etc/network$ ifconfig
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::a00:27ff:feb1:285d  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:b1:28:5d  txqueuelen 1000  (Ethernet)
+        RX packets 13852  bytes 14154377 (14.1 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 7785  bytes 663530 (663.5 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+eth0.22: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.1.4.8  netmask 255.0.0.0  broadcast 10.255.255.255
+        inet6 fe80::a00:27ff:feb1:285d  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:b1:28:5d  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 9  bytes 726 (726.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
